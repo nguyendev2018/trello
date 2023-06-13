@@ -1,14 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
-$gap: 10px;
-$column-header-height: 36px;
-$column-footer-height: 36px;
-$column-border-radius: 5px;
-$card-border-radius: 3px;
+@import "./_setting";
 
-$board-bg-color: #0079bf;
-$appbar-bg-color: #0067a3;
-$list-bg-color: #ebecf0;
-$common-element-bg: #0067a3;
 body {
   margin: 0;
   font-family: "Source Sans Pro", sans-serif;
@@ -25,88 +16,5 @@ body {
     padding-left: $gap;
     display: flex;
     align-items: center;
-    &.app {
-      background-color: $appbar-bg-color;
-      font-size: 1.5rem;
-    }
-    &.board {
-      background-color: $board-bg-color;
-      font-size: 1.1rem;
-    }
-  }
-  .board-column {
-    display: flex;
-    overflow-x: auto;
-    margin: 0 $gap $gap;
-    &::-webkit-scrollbar {
-      -webkit-appearance: none;
-    }
-    &::--webkit-scrollbar:horizontal {
-      height: 10px;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: $common-element-bg;
-      border-radius: 8px;
-    }
-    .column {
-      flex: 0 0 auto;
-      width: calc(33.33% - 20px);
-      height: calc(100% - #{$gap});
-      &:not(:first-child) {
-        margin-left: $gap;
-      }
-      > * {
-        background-color: $list-bg-color;
-        color: #333;
-        padding: 0px 8px;
-      }
-      header {
-        padding-left: 15px;
-        height: $column-header-height;
-        line-height: 36px;
-        font-size: 16px;
-        font-weight: bold;
-        border-top-right-radius: $column-border-radius;
-        border-top-left-radius: $column-border-radius;
-      }
-      footer {
-        padding-left: 15px;
-        height: $column-header-height;
-        border-bottom-left-radius: $column-border-radius;
-        border-bottom-right-radius: $column-border-radius;
-      }
-      ul {
-        list-style-type: none;
-        margin: 0;
-        max-height: calc(
-          100% - #{$column-header-height} - #{$column-footer-height}
-        );
-        overflow-y: auto;
-        &::-webkit-scrollbar {
-          -webkit-appearance: none;
-        }
-        &::-webkit-scrollbar:vertical {
-          width: 11px;
-        }
-        &::-webkit-scrollbar-thumb {
-          background-color: darken($list-bg-color, 15);
-          border-right: 5px solid $list-bg-color;
-        }
-        li {
-          background: white;
-          padding: $gap;
-          border-radius: $card-border-radius;
-          box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.1);
-          &:not(:last-child) {
-            margin-bottom: $gap;
-          }
-        }
-        img {
-          display: block;
-          width: calc(100% + 2 * #{$gap});
-          margin: -$gap 0 $gap (-$gap);
-        }
-      }
-    }
   }
 }
